@@ -1,17 +1,32 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router';
-import HelloWorld from '@/components/HelloWorld'
+
+import HelloWorld from './moudles/HelloWorld.js'  //引入 HelloWorld.js 文件
 
 Vue.use(VueRouter);
-
 
 
 const routes = [
   {
     path: '/',
-    name: 'HelloWorld',
-    component: HelloWorld
-  }
+    name: 'helloWorld',
+    components: {
+      default: resolve => require(['@/components/Home.vue'], resolve),
+      other: resolve => require(['@/components/Other.vue'], resolve),
+      left: resolve => require(['@/components/Left.vue'], resolve),
+    }
+  },
+  HelloWorld,
+
+
+  // {
+  //   path: '/bottom',
+  //   name: 'bottom',
+  //   // route level code-splitting
+  //   // this generates a separate chunk (about.[hash].js) for this route
+  //   // which is lazy-loaded when the route is visited.
+  //   component: () => import(/* webpackChunkName: "about" */ '../components/Bottom.vue')
+  // }
 ];
 
 const router = new VueRouter({

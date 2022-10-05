@@ -83,6 +83,9 @@
         </a>
       </li>
     </ul>
+    <el-button :plain="true" @click="openRouter('/right')">切换到 right</el-button>
+    <el-button :plain="true" @click="openRouter('/top')">切换到 top</el-button>
+    <router-view/>
   </div>
 </template>
 
@@ -90,32 +93,43 @@
 
   import img_a1 from "@/assets/images/20221005121843.jpg";
 
-export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App',
-      date_time: new Date().toUTCString(),
-      img_a1:img_a1
-    }
+  export default {
+    name: 'HelloWorld',
+    data() {
+      return {
+        msg: 'Welcome to Your Vue.js App',
+        date_time: new Date().toUTCString(),
+        img_a1: img_a1
+      }
+    },
+    methods: {
+      openRouter(path) {
+        let router = this.$router;
+        let obj = {path: path};
+        console.log(obj) ;
+        router.push(obj);
+      }
+    },
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  h1, h2 {
+    font-weight: normal;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  a {
+    color: #42b983;
+  }
 </style>
