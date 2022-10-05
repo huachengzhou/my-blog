@@ -1,6 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ msg }} {{date_time}}</h1>
+    <div>
+      <img :src="img_a1">
+    </div>
     <h2>Essential Links</h2>
     <ul>
       <li>
@@ -84,12 +87,16 @@
 </template>
 
 <script>
+
+  import img_a1 from "@/assets/images/20221005121843.jpg";
+
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      date_time: new Date().toUTCString()
+      date_time: new Date().toUTCString(),
+      img_a1:img_a1
     }
   }
 }
