@@ -1,9 +1,11 @@
 <template>
   <el-container>
+
     <el-header>
       <router-view name="header"/>
     </el-header>
-    <el-container>
+
+    <el-container style="margin-top:50px;">
       <el-aside width="200px">
         <router-view name="aside"/>
       </el-aside>
@@ -13,6 +15,7 @@
         </el-main>
       </el-container>
     </el-container>
+
     <el-footer>
       <router-view name="footer"/>
     </el-footer>

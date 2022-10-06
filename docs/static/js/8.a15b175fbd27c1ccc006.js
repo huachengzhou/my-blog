@@ -1,2 +1,0 @@
-webpackJsonp([8],{gl0b:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("\n  Footer\n")])},staticRenderFns:[]};var o=n("VU/8")({name:"Footer"},r,!1,function(e){n("tgyz")},"data-v-00893f06",null);t.default=o.exports},tgyz:function(e,t){}});
-//# sourceMappingURL=8.a15b175fbd27c1ccc006.js.map
