@@ -1,32 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router';
 
-import HelloWorld from './moudles/HelloWorld.js'  //引入 HelloWorld.js 文件
+import MyRouter from './moudles/My.js'  //引入 My.js 文件
+
+import HomeRouter from './moudles/Home'  //引入 Home.js 文件
 
 Vue.use(VueRouter);
 
 
 const routes = [
+  HomeRouter,
   {
     path: '/',
-    name: 'helloWorld',
-    components: {
-      default: resolve => require(['@/components/Home.vue'], resolve),
-      other: resolve => require(['@/components/Other.vue'], resolve),
-      left: resolve => require(['@/components/Left.vue'], resolve),
-    }
+    name: 'entrance',
+    component: resolve => require(['@/components/Entrance.vue'], resolve)
   },
-  HelloWorld,
-
-
-  // {
-  //   path: '/bottom',
-  //   name: 'bottom',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../components/Bottom.vue')
-  // }
+  MyRouter
 ];
 
 const router = new VueRouter({

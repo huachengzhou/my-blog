@@ -10,6 +10,9 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'  //单独引入样式文件
 Vue.use(ElementUI);
 
+import VueParticles from 'vue-particles'
+Vue.use(VueParticles);
+
 import instance from "./axios";//导入
 
 /* eslint-disable no-new */
