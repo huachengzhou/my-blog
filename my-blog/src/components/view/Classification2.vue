@@ -29,10 +29,10 @@
 </template>
 
 <script>
-
+  import * as commonUtils from '@/commonJs/untils.js' ;
 
   const item = {
-    date: new Date().toUTCString(),
+    date:commonUtils.formatTime(new Date()),
     name: '李世民',
     address: '上海市普陀区金沙江路 1518 弄'
   };

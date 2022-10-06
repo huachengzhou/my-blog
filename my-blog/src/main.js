@@ -15,6 +15,12 @@ Vue.use(VueParticles);
 
 import instance from "./axios";//导入
 
+import * as commonUtils from './commonJs/untils';
+import * as commonKey from './commonJs/commonKey';
+
+Vue.prototype.$commonUtils = commonUtils;
+Vue.prototype.$commonKey = commonKey;
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

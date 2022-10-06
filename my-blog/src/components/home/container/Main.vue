@@ -17,6 +17,8 @@
       openRouter(path) {
         let router = this.$router;
         let obj = {path: path};
+        // console.log(this.$commonUtils) ;
+        // console.log(this.$commonKey) ;
         router.push(obj);
       }
     },
