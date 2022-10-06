@@ -1,0 +1,2 @@
+webpackJsonp([7],{HzSs:function(e,t){},tU1l:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement,t=this._self._c||e;return t("div",[t("router-view")],1)},staticRenderFns:[]};var u=n("VU/8")({name:"Main",methods:{openRouter:function(e){var t={path:e};this.$router.push(t)}},mounted:function(){}},r,!1,function(e){n("HzSs")},"data-v-03a1bdba",null);t.default=u.exports}});
+//# sourceMappingURL=7.8524ee2e596b94430c73.js.map

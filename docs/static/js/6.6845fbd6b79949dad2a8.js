@@ -1,0 +1,2 @@
+webpackJsonp([6],{KKb3:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var a={name:"Header",data:function(){return{date_time:(new Date).toUTCString()}}},r={render:function(){var e=this.$createElement,t=this._self._c||e;return t("div",[t("el-empty",{attrs:{description:"数据分类展示"}})],1)},staticRenderFns:[]};var i=n("VU/8")(a,r,!1,function(e){n("cGMq")},"data-v-0a738fa7",null);t.default=i.exports},cGMq:function(e,t){}});
+//# sourceMappingURL=6.6845fbd6b79949dad2a8.js.map
