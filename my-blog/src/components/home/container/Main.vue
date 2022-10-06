@@ -1,7 +1,7 @@
 <template>
   <div>
-    <el-button :plain="true" @click="openRouter('/main/classification1')">切换到 分类数据1</el-button>
-    <el-button :plain="true" @click="openRouter('/main/classification2')">切换到 分类数据2</el-button>
+    <!--<el-button :plain="true" @click="openRouter('/main/classification1')">切换到 分类数据1</el-button>-->
+    <!--<el-button :plain="true" @click="openRouter('/main/classification2')">切换到 分类数据2</el-button>-->
     <router-view/>
   </div>
 </template>

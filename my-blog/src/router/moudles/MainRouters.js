@@ -1,21 +1,25 @@
+import * as meanData from '@/assets/datas/meanData.js' ;
 
 let mainRouters = [
-  {
-    path: '/main/classification1',
-    name: '分类数据1',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: resolve => require(['@/components/view/Classification1'], resolve)
-  },
-  {
-    path: '/main/classification2',
-    name: '分类数据2',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: resolve => require(['@/components/view/Classification2'], resolve)
-  },
+
 ];
+
+
+if (meanData.stats_gov_cn) {
+  if (meanData.stats_gov_cn.length > 0) {
+    meanData.stats_gov_cn.forEach(itemGroups => {
+      itemGroups.dataList.forEach(dataList => {
+        dataList.itemList.forEach(item => {
+          mainRouters.push({
+            path: '/main/' + item.id,
+            name: item.title,
+            component: resolve => require(['@/components/view/' + item.id], resolve)
+          })
+        });
+      });
+    });
+  }
+}
+
 
 export default mainRouters;

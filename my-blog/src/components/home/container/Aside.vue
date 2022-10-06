@@ -1,58 +1,61 @@
 <template>
   <div>
-    <el-menu :default-openeds="['1', '3']">
-      <el-submenu index="1">
-        <template slot="title"><i class="el-icon-message"></i>导航一</template>
-        <el-menu-item-group>
-          <template slot="title">分组一</template>
-          <el-menu-item index="1-1">选项1</el-menu-item>
-          <el-menu-item index="1-2">选项2</el-menu-item>
+
+    <el-menu>
+      <el-submenu :index="index_+1" :key="index_" v-for="(itemGroups, index_) in stats_gov_cn_list">
+        <template slot="title"><i class="el-icon-menu"></i>{{itemGroups.title}}</template>
+        <el-menu-item-group :key="dataIndex" v-for="(dataList, dataIndex) in itemGroups.dataList">
+          <template slot="title">{{dataList.groupTitle}}</template>
+          <el-menu-item @click.native="select(item)" :index="getIndexString(index_, dataIndex, itemGroups,index)"
+                        :key="index"
+                        v-for="(item, index) in dataList.itemList">{{item.title}}
+          </el-menu-item>
         </el-menu-item-group>
-        <el-menu-item-group title="分组2">
-          <el-menu-item index="1-3">选项3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="1-4-1">选项4-1</el-menu-item>
-        </el-submenu>
       </el-submenu>
-      <el-submenu index="2">
-        <template slot="title"><i class="el-icon-menu"></i>导航二</template>
-        <el-menu-item-group>
-          <template slot="title">分组一</template>
-          <el-menu-item index="2-1">选项1</el-menu-item>
-          <el-menu-item index="2-2">选项2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="分组2">
-          <el-menu-item index="2-3">选项3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="2-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="2-4-1">选项4-1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-submenu index="3">
-        <template slot="title"><i class="el-icon-setting"></i>导航三</template>
-        <el-menu-item-group>
-          <template slot="title">分组一</template>
-          <el-menu-item index="3-1">选项1</el-menu-item>
-          <el-menu-item index="3-2">选项2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="分组2">
-          <el-menu-item index="3-3">选项3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="3-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="3-4-1">选项4-1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
+      <el-button @click="$router.push({path:'/'})" type="primary" round icon="el-icon-top">
+        回到首页
+      </el-button>
     </el-menu>
+
+
   </div>
 </template>
 
 <script>
+
+  import * as commonUtils from '@/commonJs/untils.js' ;
+  import * as meanData from '@/assets/datas/meanData.js' ;
+
+
   export default {
-    name: "Aside"
+    name: "Aside",
+    data() {
+      return {
+        msg: 'Welcome to Your Vue.js App',
+        stats_gov_cn_list: meanData.stats_gov_cn
+      }
+    },
+    methods: {
+      select(item) {
+        let router = this.$router;
+        let obj = {path: '/main/' + item.id};
+        router.push(obj);
+      },
+      getIndexString(index_, dataIndex, itemGroups, indexValue) {
+        let arr = [];
+        arr.push(index_);
+        let index = 1 + indexValue;
+        for (let i = 0; i < itemGroups.dataList.length; i++) {
+          let obj = itemGroups.dataList[i];
+          if (dataIndex > i) {
+            break;
+          }
+          index += obj.itemList.length;
+        }
+        arr.push(index);
+        return arr.join("-");
+      }
+    }
   }
 </script>
 

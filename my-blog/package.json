@@ -13,6 +13,10 @@
     "build:d": "cross-env NODE_ENV=development node build/build.js"
   },
   "dependencies": {
+    "echarts": "^5.4.0",
+    "fs": "^0.0.1-security",
+    "lei-stream": "^1.4.2",
+    "node-xlsx": "^0.16.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

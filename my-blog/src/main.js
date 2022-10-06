@@ -13,6 +13,9 @@ Vue.use(ElementUI);
 import VueParticles from 'vue-particles'
 Vue.use(VueParticles);
 
+import * as echarts from 'echarts' ;
+Vue.prototype.$echarts = echarts ;
+
 import instance from "./axios";//导入
 
 import * as commonUtils from './commonJs/untils';

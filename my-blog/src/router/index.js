@@ -37,8 +37,8 @@ router.beforeEach((to, from, next) => {
 
 //全局后置钩子 => 和守卫不同的是，这些钩子不会接受 next 函数也不会改变导航本身
 router.afterEach((to, from) => {
-  console.log(to);
-  console.log(from);
+  // console.log(to);
+  // console.log(from);
 });
 
 //vue 路由切换时，重复点击相同路由会报错，解决方案
