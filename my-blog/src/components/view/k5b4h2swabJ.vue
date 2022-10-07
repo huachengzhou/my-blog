@@ -12,7 +12,7 @@
       </el-header>
 
       <el-main>
-        <el-table :data="tableData"  show-summary stripe>
+        <el-table max-height="550" :data="tableData"  show-summary stripe>
           <el-table-column prop="zhibiao" label="指标" >
           </el-table-column>
           <el-table-column prop="location" label="地区" >

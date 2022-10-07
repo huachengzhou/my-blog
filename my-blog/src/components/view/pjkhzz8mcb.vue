@@ -12,7 +12,7 @@
       </el-header>
 
       <el-main>
-        <el-table :data="tableData"  show-summary stripe>
+        <el-table max-height="550" :data="tableData"  show-summary stripe>
           <el-table-column prop="title" label="主要指标名称" >
           </el-table-column>
           <el-table-column prop="year" label="年份" >

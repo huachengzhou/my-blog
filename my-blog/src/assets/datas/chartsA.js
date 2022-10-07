@@ -21,7 +21,7 @@ if (meanData.stats_gov_cn) {
 
 options.aData = {
   title: {
-    text: '菜单统计数量'
+    text: '菜单统计'
   },
   tooltip: {},
   xAxis: {

@@ -12,7 +12,7 @@
       </el-header>
 
       <el-main>
-        <el-table :data="tableData"  show-summary stripe>
+        <el-table max-height="550" :data="tableData"  show-summary stripe>
           <el-table-column prop="title" label="国家" >
           </el-table-column>
           <el-table-column prop="time_string_1" label="2012" >

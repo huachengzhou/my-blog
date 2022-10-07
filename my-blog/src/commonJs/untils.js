@@ -9,7 +9,7 @@
  * (new Date()).Format("yyyy-M-d h:m:s.S")      ==> 2019-11-25 8:9:4.18
  * 使用格式,dom上 {{formatTime(time,'YYYY-MM-DD')}}
  * 在script中 this.formatTime(this.time,"hh:mm:ss")
- * 
+ *
  */
 
 Date.prototype.Format = function(fmt) {
@@ -409,12 +409,12 @@ export function parseParam(param) {
 	return arr.join("&");
 };
 
-/** 
- * param 将要转为URL参数字符串的对象 
- * key URL参数字符串的前缀 
- * encode true/false 是否进行URL编码,默认为true 
- *  
- * return URL参数字符串 
+/**
+ * param 将要转为URL参数字符串的对象
+ * key URL参数字符串的前缀
+ * encode true/false 是否进行URL编码,默认为true
+ *
+ * return URL参数字符串
  */
 var urlEncodeFun = function(param, key, encode) {
 	if (param == null) return '';
@@ -595,14 +595,11 @@ export function randomNum(minNum, maxNum) {
 	switch (arguments.length) {
 		case 1:
 			return parseInt(Math.random() * minNum + 1, 10);
-			break;
 		case 2:
 			return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
 			//或者 Math.floor(Math.random()*( maxNum - minNum + 1 ) + minNum );
-			break;
 		default:
 			return 0;
-			break;
 	}
 }
 
