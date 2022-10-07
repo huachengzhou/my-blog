@@ -34,8 +34,8 @@
           style="margin-top: 20px; text-align: center"
           :current-page="currentPage"
           :total="total"
-          :page-size="limit"
-          :page-sizes="[3, 5, 10]"
+          :pageSize="limit"
+          :page-sizes="[limit, 10, 50]"
           @current-change="handleCurrentChange"
           @size-change="handleSizeChange"
           layout="prev, pager, next, jumper,->,sizes,total"
@@ -122,10 +122,8 @@
         this.dataList = tempList;
       },
       handleCurrentChange(currentPage) {
-        console.log(currentPage, 'currentPage');
         this.currentPage = currentPage;
         this.getPageList();
-        console.log(this.currentPage); //点击第几页
       },
       //当分页器某一页需要展示数据条数发生变化的时候会触发
       handleSizeChange(limit) {
